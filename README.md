@@ -1,7 +1,8 @@
 parfait
 =======
 
-parfait is a wrapper around common pyqgis idioms that allows for faster development and some of the (sometimes) ugly C based API (read: not Python-ish)
+parfait is a wrapper around common pyqgis idioms that allows for faster development and hopefully removes
+some of the (sometimes) ugly C/C++ based API (read: not Python-ish)
 
 The current plan is to flesh out ideas using parfait and then mirgate them to core QGIS as they become stable or well designed.
 
