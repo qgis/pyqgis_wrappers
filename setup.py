@@ -10,3 +10,5 @@ setup(
     author_email='woodrow.nathan@gmail.com',
     description='A more python style wrapper around pyqgis'
 )
+
+open()
