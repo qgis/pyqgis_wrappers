@@ -11,7 +11,7 @@ What the heck is a Parfait
 
 mmmmmmmmmmmm [parfait](http://en.wikipedia.org/wiki/Parfait)
 
-A Parfait has layers, this is a layer on pyqgis, therefor parfait.
+A Parfait has layers, this is a layer on pyqgis, therefore parfait.
 Ok..don't blame me, the wife came up with it. I suck at naming.
 
 
