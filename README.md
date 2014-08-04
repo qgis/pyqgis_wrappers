@@ -18,7 +18,7 @@ Ok..don't blame me, the wife came up with it. I suck at naming.
 What can it do so far?
 ----------------------
 
-Not much yet, just one thing at the moment.
+Not much yet.
 
 Editing context manager
 
