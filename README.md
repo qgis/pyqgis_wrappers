@@ -9,6 +9,26 @@ The current plan is to flesh out ideas using parfait and then mirgate them to co
 What can it do so far?
 ----------------------
 
+### Opening a project
+
+```
+with qgisapp(sys.argv, guienabled=True) as app:
+    canvas = QgsMapCanvas()
+    with open_project(pfile, canvas=canvas) as project:
+        print project
+```
+
+or without the `with` block
+
+```
+with qgisapp(sys.argv, guienabled=True) as app:
+    canvas = QgsMapCanvas()
+    project = open_project(pfile, canvas=canvas)
+    print project
+```
+
+### Rendering a composer template from a file.
+
 ```python
 import sys
 from qgis.gui import QgsMapCanvas
@@ -35,7 +55,7 @@ with qgisapp(sys.argv, guienabled=True) as app:
     project.close()
 ```
 
-Listing loaded layers
+### Listing loaded layers
 
 ```python
 from wrappers import map_layers
