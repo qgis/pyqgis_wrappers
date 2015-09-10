@@ -6,15 +6,6 @@ some of the (sometimes) ugly C/C++ based API (read: not Python-ish)
 
 The current plan is to flesh out ideas using parfait and then mirgate them to core QGIS as they become stable or well designed.
 
-What the heck is a Parfait
----------------------------
-
-mmmmmmmmmmmm [parfait](http://en.wikipedia.org/wiki/Parfait)
-
-A Parfait has layers, this is a layer on pyqgis, therefore parfait.
-Ok..don't blame me, the wife came up with it. I suck at naming.
-
-
 What can it do so far?
 ----------------------
 
