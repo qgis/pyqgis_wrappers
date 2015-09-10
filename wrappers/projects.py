@@ -7,6 +7,11 @@ from PyQt4.QtXml import QDomDocument
 
 
 class Project(object):
+    """
+    A wrapper for handling project based logic.
+    note: This class really just talks to the QgsProject.instance() object.  QGIS can still
+    only open and load a single project at a time. QgsProject is still a bad singleton object.
+    """
     def __init__(self, bridge=None):
         self.bridge = bridge
 
@@ -15,6 +20,13 @@ class Project(object):
 
     @classmethod
     def from_file(cls, filename, canvas):
+        """
+        Load a project file from a path.
+        :param filename: The path to the project file.
+        :param canvas: (optional) Passing a canvas will auto add layers to the canvas when the load is
+        loaded.
+        :return: A Project object which wraps QgsProject.instance()
+        """
         QgsProject.instance().clear()
         bridge = None
         if canvas:
@@ -28,6 +40,9 @@ class Project(object):
         self.close()
 
     def close(self):
+        """
+        Close the current project.
+        """
         QgsProject.instance().clear()
         QgsMapLayerRegistry.instance().removeAllMapLayers()
         if self.bridge:
@@ -57,6 +72,4 @@ def open_project(projectfile, canvas=None):
     :return: A Project object wrapper with handy functions for doing project related stuff.
     """
     return Project.from_file(projectfile, canvas)
-
-
 
