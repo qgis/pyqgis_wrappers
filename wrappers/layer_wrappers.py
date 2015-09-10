@@ -3,7 +3,7 @@ from qgis.core import QgsMapLayerRegistry
 _layerreg = QgsMapLayerRegistry.instance()
 
 
-def layers(name=None):
+def map_layers(name=None):
     """
     Return all the loaded layers.
     :param name: (optional) name of layer to return..

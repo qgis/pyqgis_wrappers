@@ -21,7 +21,7 @@ What can it do so far?
 ```
 import sys
 from qgis.gui import QgsMapCanvas
-from wrappers import render_template, layers, open_project, qgisapp
+from wrappers import render_template, map_layers, open_project, qgisapp
 
 pfile = r"project.qgs"
 template = r"template.qpt"
@@ -42,5 +42,13 @@ with qgisapp(sys.argv, guienabled=True) as app:
     settings = project.map_settings
     render_template(template, settings, canvas, r"out.pdf")
     project.close()
+```
+
+Listing loaded layers
+
+```
+from wrappers import map_layers
+layers = map_layers()
+mylayer = map_layers(name='mylayer')
 ```
 
