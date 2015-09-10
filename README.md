@@ -18,19 +18,29 @@ Ok..don't blame me, the wife came up with it. I suck at naming.
 What can it do so far?
 ----------------------
 
-Not much yet.
+```
+import sys
+from qgis.gui import QgsMapCanvas
+from wrappers import render_template, layers, open_project, qgisapp
 
-Editing context manager
+pfile = r"project.qgs"
+template = r"template.qpt"
 
-Within the the editing with block the layer with be in edit mode, so methods like addFeature and updateFeature will work as expected. When the block exits layer.commitChanges will be called and errors will be handled.
+with qgisapp(sys.argv, guienabled=True) as app:
+    canvas = QgsMapCanvas()
+    with open_project(pfile, canvas=canvas) as project:
+        settings = project.map_settings
+        render_template(template, settings, canvas, r"out.pdf")
+```
+
+or without the `with` block
 
 ```
-import parfait
-
-layer = QgsVectorLayer("Point", "mylayer", "memory")
-with parfait.editing(layer):
-  layer.addFeature(..)
-  
+with qgisapp(sys.argv, guienabled=True) as app:
+    canvas = QgsMapCanvas()
+    project = open_project(pfile, canvas=canvas)
+    settings = project.map_settings
+    render_template(template, settings, canvas, r"out.pdf")
+    project.close()
 ```
 
-  

@@ -1,11 +1,6 @@
 import sys
-from qgis.core import QgsApplication
 from qgis.gui import QgsMapCanvas
-from wrappers.printing import render_template
-from wrappers.layer_wrappers import layers
-from wrappers.projects import open_project
-from qgis.core.contextmanagers import qgisapp
-
+from wrappers import render_template, layers, open_project, qgisapp
 
 pfile = r"F:\gis_data\QGIS_Training\Perth\Perth.qgs"
 template = r"F:\dev\qgis.wrappers\data\template.qpt"
