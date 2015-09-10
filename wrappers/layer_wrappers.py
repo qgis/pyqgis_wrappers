@@ -1,3 +1,4 @@
+import re
 from qgis.core import QgsMapLayerRegistry
 
 _layerreg = QgsMapLayerRegistry.instance()
@@ -12,9 +13,12 @@ def map_layers(name=None, type=None):
     """
     layers = _layerreg.mapLayers().values()
     _layers = []
-    if name:
-        _layers = [layer for layer in layers if layer.layerName() == name]
-    if type:
-        _layers += [layer for layer in layers if layer.type() == type]
+    if name or type:
+        if name:
+            _layers = [layer for layer in layers if re.match(name, layer.name())]
+        if type:
+            _layers += [layer for layer in layers if layer.type() == type]
+        return _layers
+    else:
+        return layers
 
-    return _layers

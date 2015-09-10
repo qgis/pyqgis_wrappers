@@ -63,3 +63,12 @@ layers = map_layers()
 mylayer = map_layers(name='mylayer')
 ```
 
+filter by regex
+
+```
+from wrappers import map_layers
+for layer in map_layers(".*Bound.*"):
+    print layer.name()
+```
+
+
