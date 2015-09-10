@@ -18,7 +18,7 @@ Ok..don't blame me, the wife came up with it. I suck at naming.
 What can it do so far?
 ----------------------
 
-```
+```python
 import sys
 from qgis.gui import QgsMapCanvas
 from wrappers import render_template, map_layers, open_project, qgisapp
@@ -35,7 +35,7 @@ with qgisapp(sys.argv, guienabled=True) as app:
 
 or without the `with` block
 
-```
+```python
 with qgisapp(sys.argv, guienabled=True) as app:
     canvas = QgsMapCanvas()
     project = open_project(pfile, canvas=canvas)
@@ -46,7 +46,7 @@ with qgisapp(sys.argv, guienabled=True) as app:
 
 Listing loaded layers
 
-```
+```python
 from wrappers import map_layers
 layers = map_layers()
 mylayer = map_layers(name='mylayer')
