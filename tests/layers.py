@@ -1,5 +1,5 @@
 import sys
-from wrappers import render_template, map_layers, open_project, qgisapp
+from qgisapp.py import render_template, map_layers, open_project, QGIS
 
 pfile = r"F:\gis_data\QGIS_Training\Perth\Perth.qgs"
 
