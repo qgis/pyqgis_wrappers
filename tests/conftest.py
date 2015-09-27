@@ -1,11 +1,10 @@
 from qgis.core import QgsApplication
+from parfait import QGIS
 import pytest
 
 @pytest.fixture(scope="module")
 def QGIS(request):
-    app = QgsApplication([], False)
-    QgsApplication.initQgis()
-    print app
+    app = QGIS.init()
     def fin():
         print ("teardown QGIS")
         QgsApplication.exitQgis()

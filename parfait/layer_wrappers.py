@@ -1,5 +1,6 @@
+import os
 import re
-from qgis.core import QgsMapLayerRegistry
+from qgis.core import QgsMapLayerRegistry, QgsVectorLayer
 
 _layerreg = QgsMapLayerRegistry.instance()
 
@@ -21,4 +22,31 @@ def map_layers(name=None, type=None):
         return _layers
     else:
         return layers
+
+
+def add_layer(layer, load_in_legend=True):
+    """
+    Add a open layer to the QGIS session and layer registry.
+    :param layer: The layer object to add the QGIS layer registry and session.
+    :param load_in_legend: True if this layer should be added to the legend.
+    :return: The added layer
+    """
+    if not hasattr(layer, "__iter__"):
+        layer = [layer]
+    QgsMapLayerRegistry.instance().addMapLayers(layer, load_in_legend)
+    return layer
+
+
+def load_vector(path, name=None, provider="ogr"):
+    """
+    Load a vector layer and return the QgsVectorLayer instance.
+    :param path: Path to the vector layer.
+    :param name: The name of the new layer.
+    :param provider: The provider to open this layer with defaults to ogr.
+    :return: A QgsVectorLayer instance for the layer.
+    """
+    if not name:
+        name = os.path.basename(path)
+    layer = QgsVectorLayer(path, name, provider)
+    return layer
 

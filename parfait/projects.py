@@ -1,4 +1,5 @@
-from wrappers.layer_wrappers import map_layers
+import os
+from parfait.layer_wrappers import map_layers
 from qgis.core.contextmanagers import qgisapp
 from qgis.core import QgsProject, QgsMapLayerRegistry, QgsMapSettings
 from qgis.gui import QgsMapCanvas, QgsLayerTreeMapCanvasBridge
