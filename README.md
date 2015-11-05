@@ -1,5 +1,5 @@
 # pyqgis_wrappers
-common functions to be used in pyqgis and python qgis plugins
+Common functions to be used in pyqgis and python qgis plugins
 
 **NOTE:** Just a sandbox for now.  Don't consider the API stable.
 
