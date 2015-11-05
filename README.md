@@ -1,10 +1,12 @@
-parfait
-=======
+# pyqgis_wrappers
+common functions to be used in pyqgis and python qgis plugins
 
-parfait is a wrapper around common pyqgis idioms that allows for faster development and hopefully removes
+**NOTE:** Just a sandbox for now.  Don't consider the API stable.
+
+These are wrappers around common pyqgis idioms that allows for faster development and hopefully removes
 some of the (sometimes) ugly C/C++ based API (read: not Python-ish)
 
-The current plan is to flesh out ideas using parfait and then mirgate them to core QGIS as they become stable or well designed.
+The current plan is to flesh out ideas here and then mirgate them to core QGIS as they become stable or well designed.
 
 What can it do so far?
 ----------------------
@@ -70,5 +72,3 @@ from wrappers import map_layers
 for layer in map_layers(".*Bound.*"):
     print layer.name()
 ```
-
-
