@@ -1,3 +1,5 @@
+# This project is archived and stays only for reference
+
 # pyqgis_wrappers
 Common functions to be used in pyqgis and python qgis plugins
 
